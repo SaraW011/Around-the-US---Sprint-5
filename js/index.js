@@ -134,7 +134,7 @@ form.addEventListener('submit', handleSubmit);
 openProfileEditButton.addEventListener('click', openModal);
 
 
-openProfileEditButton.addEventListener('click', () => openModal(editProfilePopup));
+openProfileEditButton.addEventListener('click', (evt) => openModal(editProfilePopup));
 addNewPlacePopupButton.addEventListener('click', () => openModal(addNewPlacePopup));
 
 

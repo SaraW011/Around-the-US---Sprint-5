@@ -33,7 +33,6 @@ function closeModal() {
     addNewPlacePopup.classList.remove('modal_open');
 }
 
-
 //**-->>CPLACE CARD ELEMENTS <<--**
 
 function createPlaceElement(nameAndLink) { // nameAndLink is object of {name, link}
@@ -105,10 +104,10 @@ function openModal(editProfilePopup) {
     const userJob = userJobElement.textContent
     
     // ------------->>>>>>  holds initial values inside form when open:
-    // inputName.value = userName
-    // inputJob.value = userJob
-
-   editProfilePopup.classList.add('modal_open');
+    inputName.value = userName
+    inputJob.value = userJob
+       
+    editProfilePopup.classList.add('modal_open');  // error editProfilePopup undefined 
 }
 
 
@@ -137,6 +136,7 @@ openProfileEditButton.addEventListener('click', openModal);
 
 openProfileEditButton.addEventListener('click', () => openModal(editProfilePopup));
 addNewPlacePopupButton.addEventListener('click', () => openModal(addNewPlacePopup));
+
 
 //------> old close btn only for profile popup: closeModalButton.addEventListener('click', closeModal); 
 
