@@ -1,6 +1,6 @@
 /* styling for each card element -outer wrap */
 .elements__element {  
-    position: relative; 
+    position: relative;
     width: 100%;
     list-style-type: none;
     background-color: #FFFFFF;
