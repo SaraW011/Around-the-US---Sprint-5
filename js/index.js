@@ -131,7 +131,7 @@ function handleSubmit(e) {
 
 form.addEventListener('submit', handleSubmit);
 
-openProfileEditButton.addEventListener('click', openModal);
+// openProfileEditButton.addEventListener('click', openModal);
 
 
 openProfileEditButton.addEventListener('click', (evt) => openModal(editProfilePopup));
