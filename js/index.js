@@ -1,7 +1,7 @@
 //wrapper modals 
-const editProfilePopup = document.querySelector('.modal_type_edit_profile');
-const addNewPlacePopup = document.querySelector('.modal_type_add_place');
-const previewImage = document.querySelector('.modal_type_preview_image');
+const editProfilePopup = document.querySelector('.modal_type_edit-profile');
+const addNewPlacePopup = document.querySelector('.modal_type_add-place');
+const previewImage = document.querySelector('.modal_type_preview-image');
 
 //wrapper for popup form 
 const form = document.querySelector('.form'); //handlesubmit saves from input
