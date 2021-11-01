@@ -107,7 +107,7 @@ function openModal(editProfilePopup) {
     inputName.value = userName
     inputJob.value = userJob
        
-    editProfilePopup.classList.add('modal_open');  // error editProfilePopup undefined 
+    editProfilePopup.classList.add('modal_open');
 }
 
 

@@ -12,34 +12,34 @@
     z-index: 999;
     
     /* animation: */
-    animation: fadeIn .5s;
-    -webkit-animation: fadeIn .5s;
-    -moz-animation: fadeIn .5s;
-    -o-animation: fadeIn .5s;
-    -ms-animation: fadeIn .5s;
+    animation: fadein .5s;
+    -webkit-animation: fadein .5s;
+    -moz-animation: fadein .5s;
+    -o-animation: fadein .5s;
+    -ms-animation: fadein .5s;
     }
 
-  @keyframes fadeIn {
+  @keyframes fadein {
     0% {opacity:0;}
     100% {opacity:1;}
   }
   
-  @-moz-keyframes fadeIn {
+  @-moz-keyframes fadein {
     0% {opacity:0;}
     100% {opacity:1;}
   }
   
-  @-webkit-keyframes fadeIn {
+  @-webkit-keyframes fadein {
     0% {opacity:0;}
     100% {opacity:1;}
   }
   
-  @-o-keyframes fadeIn {
+  @-o-keyframes fadein {
     0% {opacity:0;}
     100% {opacity:1;}
   }
   
-  @-ms-keyframes fadeIn {
+  @-ms-keyframes fadein {
     0% {opacity:0;}
     100% {opacity:1;}
   }
