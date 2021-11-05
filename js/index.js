@@ -29,29 +29,24 @@ const placeList = document.querySelector(".elements__list"); //places all cards 
 const placeTemplate = document.querySelector(".elements-template").content.querySelector(".elements__element");
 
 
-//-->> close modal with buttons:
-function closeModal() {
-  editProfilePopup.classList.remove("modal_open");
-  addNewPlacePopup.classList.remove("modal_open");
+//**-->>OPEN AND CLOSE MODALS <<--**
+
+//-->> open + close modals:
+const profilePopup = document.querySelector('.modal'); 
+
+function openModal(popup) {              
+  popup.classList.add("modal_open");    
 }
 
-//comment from reviewer: ^ ^ ^ (line 33)
-// Both functions take the DOM element of a popup as a parameter and add/remove the necessary control class.
-// These functions should be used wherever we work with a popup. 
-//If you need to do something else besides opening or closing the popup, use the composition of functions:
+function closeModal(btn) {
+  btn.classList.remove("modal_open");
+}
 
-// const profilePopup = document.querySelector(' ... ');
-
-// function openPopup(popup) {
-//   //  functionality for adding a class to a modal element
+//-->> prev close modal with submit:
+// function closeBtn() {
+//   editProfilePopup.classList.remove("modal_open");
+//   addNewPlacePopup.classList.remove("modal_open");
 // }
- 
-// function openProfilePopup() {
-//   openPopup(profilePopup);
-//   profileInput.value = '';
-//   // ...
-// } 
-
 
 //**-->>CPLACE CARD ELEMENTS <<--**
 
@@ -95,36 +90,11 @@ function submitNewPlaceForm(e) {
 
   placeList.prepend(insertPlace);
 
-  closeModal();
+  closeModal(addNewPlacePopup);
 }
 
 
-// close ALL modals with x button:
-const closeAllBtns = document.querySelectorAll('.modal__close-button');
-closeAllBtns.forEach(btn => btn.addEventListener('click', () => {
-    const allPopus = document.querySelectorAll('.modal');
-    allPopus.forEach(popup => popup.classList.remove('modal_open'))
-}));
-
-//comment from reviewer: ^ ^ ^ (line 103)
-// There is no point in closing all popups when clicking on one close button. 
-//You need to close the popup that is under the button. You can find current closest popup with closest method:
-// const popup = btn.closest('.modal');
-// closePopup(popup);
-
-
 //**-->>PROFILE FORM <<--**
-
-//**--->>> previous function for profile edit form:
-// function openProfileModal(editProfilePopup){
-//   if (!editProfilePopup.classList.contains("modal_open")){
-//     inputName.value = userNameElement.textContent;
-//     inputJob.value = userJobElement.textContent;
-//   }
-//   editProfilePopup.classList.toggle("modal_open");
-// }
-
-//------>>> another way of writing the above function: ------<<<
 
 //allows editing form:
 function openProfileModal(editProfilePopup) { 
@@ -135,7 +105,8 @@ function openProfileModal(editProfilePopup) {
   inputName.value = userName;
   inputJob.value = userJob;
 
-  editProfilePopup.classList.add("modal_open");
+  openModal(editProfilePopup);
+
 }
 
 // insert new name into profile:
@@ -149,9 +120,15 @@ function submitProfileForm(e) {
   userNameElement.textContent = nameValue;
   userJobElement.textContent = jobValue;
 
-  closeModal(); // button close
+  closeModal(editProfilePopup);
 }
 
+
+// close ALL modals with x button:
+const closeAllBtns = document.querySelectorAll('.modal__close-button');
+closeAllBtns.forEach(btn => btn.addEventListener('click', (evt) => {
+  closeModal(evt.target.closest('.modal'))
+}));
 
 
 //*****---->>> EVT LISTENERS <<----*****
