@@ -38,8 +38,8 @@ function openModal(popup) {
   popup.classList.add("modal_open");    
 }
 
-function closeModal(btn) {
-  btn.classList.remove("modal_open");
+function closeModal(popup) {
+  popup.classList.remove("modal_open");
 }
 
 //-->> prev close modal with submit:
